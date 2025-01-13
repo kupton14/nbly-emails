@@ -379,14 +379,8 @@
                     <tr>
                      <td style="font-family:Arial,sans-serif;padding:5px 0;">
                       <div style="color:#0033A0;font-family: Arial, sans-serif !important;font-size:22px;line-height:30px;text-align:center;">
-                       Call {{custom_attribute.${asv_job}.franchise.franchise_dba_name | default: 'Aire Serv'}}:<br />
-                       <a style="color:#0033A0;text-decoration: none;" aria-label="{{custom_attribute.${asv_job}.franchise.store_phone | default: '833-448-0654'}}" href="tel:{{custom_attribute.${asv_job}.franchise.store_phone | default: '833-448-0654'}}">{% assign phone_number = custom_attribute.${asv_job}.franchise.store_phone | default: '833-448-0654' %}
-
-                        {% if phone_number == '833-448-0654' %}
-                        {{phone_number}}
-                        {% else %}
-                        {{phone_number | replace: '(', '' | replace: ')', '' | replace: ' ', '-' | replace: '.', '-' | replace: '--', '-' | slice: 0, 3}}-{{phone_number | slice: 3, 3}}-{{phone_number | slice: 6, 4}}
-                        {% endif %}</a>
+                       Call {{franchise_dba_name | default: 'Aire Serv'}}:<br />
+                       <a style="color:#0033A0;text-decoration: none;" aria-label="{{custom_attribute.${asv_job}.franchise.store_phone | default: '833-448-0654'}}" href="tel:{{custom_attribute.${asv_job}.franchise.store_phone | default: '833-448-0654'}}">{{franchise.store_phone | default: '833-448-0654'}}</a>
                       </div>
                      </td>
                     </tr>
