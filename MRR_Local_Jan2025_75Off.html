@@ -389,14 +389,8 @@
                     <tr>
                      <td style="font-family:Arial,sans-serif;padding:5px 0;">
                       <div style="color:#E02826;font-family: Arial, sans-serif !important;font-size:22px;line-height:30px;text-align:center;">
-                       Call {{custom_attribute.${mrr_job}.franchise.franchise_dba_name | default: 'Mr. Rooter Plumbing'}}:<br />
-                       <a style="color:#E02826;text-decoration: none;" aria-label="{{custom_attribute.${mrr_job}.franchise.store_phone | default: '833-451-1076'}}" href="tel:{{custom_attribute.${mrr_job}.franchise.store_phone | default: '833-451-1076'}}">{% assign phone_number = custom_attribute.${mrr_job}.franchise.store_phone | default: '833-451-1076' %}
-
-                        {% if phone_number == '833-451-1076' %}
-                        {{phone_number}}
-                        {% else %}
-                        {{phone_number | replace: '(', '' | replace: ')', '' | replace: ' ', '-' | replace: '.', '-' | replace: '--', '-' | slice: 0, 3}}-{{phone_number | slice: 3, 3}}-{{phone_number | slice: 6, 4}}
-                        {% endif %}</a>
+                       Call {{franchise_dba_name | default: 'Mr. Rooter Plumbing'}}:<br />
+                       <a style="color:#E02826;text-decoration: none;" aria-label="{{custom_attribute.${mrr_job}.franchise.store_phone | default: '833-451-1076'}}" href="tel:{{custom_attribute.${mrr_job}.franchise.store_phone | default: '833-451-1076'}}">{{franchise.store_phone | default: '833-451-1076'}}</a>
                       </div>
                      </td>
                     </tr>
