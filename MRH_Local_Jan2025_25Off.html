@@ -378,14 +378,8 @@
                     <tr>
                      <td style="font-family:Arial,sans-serif;padding:5px 0;">
                       <div style="color:#B62025;font-family: Arial, sans-serif !important;font-size:22px;line-height:30px;text-align:center;">
-                       Call {{custom_attribute.${mhm_job}.franchise.franchise_dba_name | default: 'Mr. Handyman'}}:<br />
-                       <a style="color:#B62025;text-decoration: none;" aria-label="{{custom_attribute.${mhm_job}.franchise.store_phone | default: '866-307-7555'}}" href="tel:{{custom_attribute.${mhm_job}.franchise.store_phone | default: '866-307-7555'}}">{% assign phone_number = custom_attribute.${mhm_job}.franchise.store_phone | default: '866-307-7555' %}
-
-                        {% if phone_number == '866-307-7555' %}
-                        {{phone_number}}
-                        {% else %}
-                        {{phone_number | replace: '(', '' | replace: ')', '' | replace: ' ', '-' | replace: '.', '-' | replace: '--', '-' | slice: 0, 3}}-{{phone_number | slice: 3, 3}}-{{phone_number | slice: 6, 4}}
-                        {% endif %}</a>
+                       Call {{franchise.franchise_dba_name | default: 'Mr. Handyman'}}:<br />
+                       <a style="color:#B62025;text-decoration: none;" aria-label="{{custom_attribute.${mhm_job}.franchise.store_phone | default: '866-307-7555'}}" href="tel:{{custom_attribute.${mhm_job}.franchise.store_phone | default: '866-307-7555'}}">{{franchise.store_phone | default: '866-307-7555'}}</a>
                       </div>
                      </td>
                     </tr>
