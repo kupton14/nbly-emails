@@ -371,14 +371,8 @@
                     <tr>
                      <td style="font-family:Arial,sans-serif;padding:5px 0;">
                       <div style="color:#006AC6;font-family: Arial, sans-serif !important;font-size:22px;line-height:30px;text-align:center;">
-                       Call {{custom_attribute.${mre_job}.franchise.franchise_dba_name | default: 'Mr. Electric'}}:<br />
-                       <a style="color:#006AC6;text-decoration: none;" aria-label="{{custom_attribute.${mre_job}.franchise.store_phone | default: '833-451-1075'}}" href="tel:{{custom_attribute.${mre_job}.franchise.store_phone | default: '833-451-1075'}}">{% assign phone_number = custom_attribute.${mre_job}.franchise.store_phone | default: '833-451-1075' %}
-
-                        {% if phone_number == '833-451-1075' %}
-                        {{phone_number}}
-                        {% else %}
-                        {{phone_number | replace: '(', '' | replace: ')', '' | replace: ' ', '-' | replace: '.', '-' | replace: '--', '-' | slice: 0, 3}}-{{phone_number | slice: 3, 3}}-{{phone_number | slice: 6, 4}}
-                        {% endif %}</a>
+                       Call {{franchise.franchise_dba_name | default: 'Mr. Electric'}}:<br />
+                       <a style="color:#006AC6;text-decoration: none;" aria-label="{{custom_attribute.${mre_job}.franchise.store_phone | default: '833-451-1075'}}" href="tel:{{custom_attribute.${mre_job}.franchise.store_phone | default: '833-451-1075'}}">{{franchise.store_phone | default: '833-451-1075'}}</a>
                       </div>
                      </td>
                     </tr>
