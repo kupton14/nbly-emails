@@ -382,14 +382,8 @@
                     <tr>
                      <td style="font-family:Arial,sans-serif;padding:5px 0;">
                       <div style="color:#071D49;font-family: Arial, sans-serif !important;font-size:22px;line-height:30px;text-align:center;">
-                       Call {{custom_attribute.${mly_job}.franchise.franchise_dba_name | default: 'Molly Maid'}}:<br />
-                       <a style="color:#071D49;text-decoration: none;" aria-label="{{custom_attribute.${mly_job}.franchise.store_phone | default: '866-203-1434'}}" href="tel:{{custom_attribute.${mly_job}.franchise.store_phone | default: '866-203-1434'}}">{% assign phone_number = custom_attribute.${mly_job}.franchise.store_phone | default: '866-203-1434' %}
-
-                        {% if phone_number == '866-203-1434' %}
-                        {{phone_number}}
-                        {% else %}
-                        {{phone_number | replace: '(', '' | replace: ')', '' | replace: ' ', '-' | replace: '.', '-' | replace: '--', '-' | slice: 0, 3}}-{{phone_number | slice: 3, 3}}-{{phone_number | slice: 6, 4}}
-                        {% endif %}</a>
+                       Call {{ranchise.franchise_dba_name | default: 'Molly Maid'}}:<br />
+                       <a style="color:#071D49;text-decoration: none;" aria-label="{{custom_attribute.${mly_job}.franchise.store_phone | default: '866-203-1434'}}" href="tel:{{custom_attribute.${mly_job}.franchise.store_phone | default: '866-203-1434'}}">{{franchise.store_phone | default: '866-203-1434'}}</a>
                       </div>
                      </td>
                     </tr>
