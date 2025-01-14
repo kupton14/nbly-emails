@@ -363,31 +363,25 @@
       </table>
 
       <!-- Begin Call Us At -->
-      <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="max-width:600px;margin:0 auto;background:#dbe7f3;background-color:#dbe7f3;">
+      <table width="100%" align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;max-width:600px;margin:0 auto;background:#dbe7f3;background-color:#dbe7f3;">
        <tbody>
         <tr>
-         <td style="background:#dbe7f3;background-color:#dbe7f3;padding: 30px;">
-          <table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+         <td style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;background:#dbe7f3;background-color:#dbe7f3;padding: 30px;">
+          <table cellpadding="0" cellspacing="0" role="presentation" width="100%" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
            <tbody>
             <tr>
-             <td>
-              <table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+             <td style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+              <table cellpadding="0" cellspacing="0" role="presentation" width="100%" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
                <tbody>
                 <tr>
-                 <td style="text-align:center;vertical-align:top;font-size:0px">
-                  <table cellpadding="0" cellspacing="0" role="presentation" width="100%">
+                 <td style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;text-align:center;vertical-align:top;font-size:0px;">
+                  <table cellpadding="0" cellspacing="0" role="presentation" width="100%" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;">
                    <tbody>
                     <tr>
-                     <td style="font-family:Arial,sans-serif;padding:5px 0;">
+                     <td style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family:Arial,sans-serif;padding:5px 0;">
                       <div style="color:#002554;font-family: Arial, sans-serif !important;font-size:22px;line-height:30px;text-align:center;">
-                       Call {{custom_attribute.${mra_job}.franchise.franchise_dba_name | default: 'Mr. Appliance'}}:<br />
-                       <a style="color:#002554;text-decoration: none;" aria-label="{{custom_attribute.${mra_job}.franchise.store_phone | default: '833-448-0658'}}" href="tel:{{custom_attribute.${mra_job}.franchise.store_phone | default: '833-448-0658'}}">{% assign phone_number = custom_attribute.${mra_job}.franchise.store_phone | default: '833-448-0658' %}
-
-                        {% if phone_number == '833-448-0658' %}
-                        {{phone_number}}
-                        {% else %}
-                        {{phone_number | replace: '(', '' | replace: ')', '' | replace: ' ', '-' | replace: '.', '-' | replace: '--', '-' | slice: 0, 3}}-{{phone_number | slice: 3, 3}}-{{phone_number | slice: 6, 4}}
-                        {% endif %}</a>
+                       Call {{franchise_dba_name | default: 'Mr. Appliance'}}:<br />
+                       <a style="color:#002554;text-decoration: none;" aria-label="{{custom_attribute.${mra_job}.franchise.store_phone | default: '833-448-0658'}}" href="tel:{{custom_attribute.${mra_job}.franchise.store_phone | default: '833-448-0658'}}">{{franchise.store_phone | default: '833-448-0658'}}</a>
                       </div>
                      </td>
                     </tr>
@@ -404,7 +398,7 @@
          </td>
         </tr>
         <tr>
-         <td class="elq-text-cell cell cell-0" style="background-color:#0E4C90;line-height:18px;padding:3px 0px;">
+         <td class="elq-text-cell cell cell-0" style="border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;background-color:#0E4C90;line-height:18px;padding:3px 0px;">
          </td>
         </tr>
        </tbody>
